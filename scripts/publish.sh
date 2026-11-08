@@ -14,6 +14,8 @@ MANIFEST="$ROOT/latest.json"
 REPO="${MYSANBOT_RELEASES_REPO:-brientim/MySanbot-Releases}"
 # Robots only accept in-place updates signed by this certificate (canonical robot key).
 EXPECTED_CERT_SHA256="${EXPECTED_CERT_SHA256:-4c94fbf5dce682c2ad3bbaf83f101dc65d6a1debcbf32ddee23b64e5b41e4e57}"
+# Earlier releases kept per app in "versions" so robots can roll back.
+KEEP_VERSIONS="${KEEP_VERSIONS:-5}"
 
 if [[ $# -lt 2 ]]; then
   echo "Usage: $0 <apk> <slug> [notes]" >&2
@@ -91,12 +93,18 @@ UPDATED="$(jq \
   --argjson version_code "$VERSION_CODE" --arg version_name "$VERSION_NAME" \
   --arg apk_url "$APK_URL" --arg sha256 "$SHA256" --argjson size "$SIZE" \
   --argjson min_sdk "${MIN_SDK:-21}" --arg notes "$NOTES" --arg now "$NOW" \
+  --argjson keep "$KEEP_VERSIONS" \
   '.schema = 1 | .generated_at = $now
+   | ([.apps[] | select(.package == $package)][0]) as $prev
+   | ((if $prev then [$prev | del(.package, .label, .slug, .versions)] else [] end)
+      + ($prev.versions // [])
+      | map(select(.version_code < $version_code)) | .[:$keep]) as $history
    | .apps = ([.apps[] | select(.package != $package)] + [{
        package: $package, label: $label, slug: $slug,
        version_code: $version_code, version_name: $version_name,
        apk_url: $apk_url, sha256: $sha256, size: $size,
-       min_sdk: $min_sdk, notes: $notes, published_at: $now
+       min_sdk: $min_sdk, notes: $notes, published_at: $now,
+       versions: $history
      }] | sort_by(.package))' "$MANIFEST")"
 
 if [[ "${DRY_RUN:-0}" == "1" ]]; then

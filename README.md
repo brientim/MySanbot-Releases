@@ -36,11 +36,25 @@ It installs with `pm install -r` through root when the robot has `su`. Otherwise
       "size": 123456,
       "min_sdk": 21,
       "notes": "…",
-      "published_at": "2026-11-09T00:00:00Z"
+      "published_at": "2026-11-09T00:00:00Z",
+      "versions": [
+        {
+          "version_code": 97,
+          "version_name": "1.3.82",
+          "apk_url": "…",
+          "sha256": "…",
+          "size": 123456,
+          "min_sdk": 21,
+          "notes": "…",
+          "published_at": "2026-11-08T00:00:00Z"
+        }
+      ]
     }
   ]
 }
 ```
+
+`versions` lists earlier releases of the same app, newest first (the last 5; `KEEP_VERSIONS` changes it). Proxy 1.3.87+ offers them so a robot can roll back to a known-good build. Older Proxies ignore the field.
 
 ## Publishing
 
@@ -57,7 +71,7 @@ The script does the following, in order:
 2. Refuses an APK that isn't signed by the canonical robot key.
 3. Refuses a `versionCode` that isn't higher than the published one.
 4. Creates the release `<slug>-<versionName>` with the APK attached.
-5. Updates `latest.json`, then commits and pushes it.
+5. Updates `latest.json`, moving the previous release into that app's `versions`, then commits and pushes it.
 
 ## Signing
 
