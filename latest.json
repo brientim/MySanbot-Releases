@@ -1,7 +1,20 @@
 {
   "schema": 1,
-  "generated_at": "2026-11-08T22:18:30Z",
+  "generated_at": "2026-11-08T22:18:36Z",
   "apps": [
+    {
+      "package": "com.qihan.HumanFollow",
+      "label": "Human Follow",
+      "slug": "humanfollow",
+      "version_code": 4,
+      "version_name": "1.2.0",
+      "apk_url": "https://github.com/brientim/MySanbot-Releases/releases/download/humanfollow-1.2.0/humanfollow-1.2.0.apk",
+      "sha256": "3e8fcf4840ac870e44631deef55fa0cd9e8fdb445b858170145bf9c08a91a72d",
+      "size": 6803530,
+      "min_sdk": 21,
+      "notes": "Human Follow replacement for com.qihan.HumanFollow: OpenSDK face boxes, stand-off distance, Google TTS/ASR.",
+      "published_at": "2026-11-08T22:18:36Z"
+    },
     {
       "package": "mysanbot.opensdkproxy",
       "label": "OpenSDK Proxy",
