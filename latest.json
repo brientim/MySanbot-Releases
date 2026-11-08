@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "generated_at": "2026-11-08T22:18:42Z",
+  "generated_at": "2026-11-08T22:18:49Z",
   "apps": [
     {
       "package": "com.grin.sanbotrosbridge",
@@ -27,6 +27,19 @@
       "min_sdk": 21,
       "notes": "Human Follow replacement for com.qihan.HumanFollow: OpenSDK face boxes, stand-off distance, Google TTS/ASR.",
       "published_at": "2026-11-08T22:18:36Z"
+    },
+    {
+      "package": "com.sanbot.capaBot",
+      "label": "CapaBot",
+      "slug": "capabot",
+      "version_code": 202610284,
+      "version_name": "6.0.5-googletts",
+      "apk_url": "https://github.com/brientim/MySanbot-Releases/releases/download/capabot-6.0.5-googletts/capabot-6.0.5-googletts.apk",
+      "sha256": "e5d0569e1344c19cb37b95b8c0a252fbc3d59c1822a68c984c55b0995004d1fa",
+      "size": 19525725,
+      "min_sdk": 19,
+      "notes": "CapaBot greeter (Apache-2.0, fork of igor-lirussi/CapaBot-SanBot-Robot), Google TTS build for Nano.",
+      "published_at": "2026-11-08T22:18:49Z"
     },
     {
       "package": "mysanbot.opensdkproxy",
