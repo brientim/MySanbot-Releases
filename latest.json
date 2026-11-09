@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "generated_at": "2026-11-09T00:00:14Z",
+  "generated_at": "2026-11-09T00:00:25Z",
   "apps": [
     {
       "package": "com.grin.sanbotrosbridge",
@@ -53,6 +53,20 @@
       "min_sdk": 19,
       "notes": "CapaBot greeter (Apache-2.0, fork of igor-lirussi/CapaBot-SanBot-Robot), Google TTS build for Nano.",
       "published_at": "2026-11-08T22:18:49Z",
+      "versions": []
+    },
+    {
+      "package": "com.sanbot.xboxcontroller",
+      "label": "Sanbot Controllers",
+      "slug": "sanbotcontrollers",
+      "version_code": 1,
+      "version_name": "1.0",
+      "apk_url": "https://github.com/brientim/MySanbot-Releases/releases/download/sanbotcontrollers-1.0/sanbotcontrollers-1.0.apk",
+      "sha256": "7c808e7b62915ae2c884fe5efb67e5f41d65a0fe929fc12f55bbd055bf3313b3",
+      "size": 61823057,
+      "min_sdk": 23,
+      "notes": "Sanbot Controllers: drive the Nano with an Xbox gamepad or BLE Force Band, or build Visual Coding (Blockly) programs on the robot.",
+      "published_at": "2026-11-09T00:00:25Z",
       "versions": []
     },
     {
