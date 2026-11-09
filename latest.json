@@ -1,7 +1,21 @@
 {
   "schema": 1,
-  "generated_at": "2026-11-09T05:27:54Z",
+  "generated_at": "2026-11-09T09:58:37Z",
   "apps": [
+    {
+      "package": "au.com.brien.followastra",
+      "label": "Follow Astra",
+      "slug": "followastra",
+      "version_code": 13,
+      "version_name": "0.2.8",
+      "apk_url": "https://github.com/brientim/MySanbot-Releases/releases/download/followastra-0.2.8/followastra-0.2.8.apk",
+      "sha256": "1cf560fe8f4deecd1049c88665a8a4453d8f70c46df9f39be2cb63e00aceaae0",
+      "size": 38431340,
+      "min_sdk": 21,
+      "notes": "Follow Astra: the Nano follows you using its Orbbec Astra 3D depth camera — real distance, locks on to one person, slow and steady (never reverses), stops and waits if it loses you. Voice: follow me, stop, turn left/right [N degrees], turn around, I'm on your left/right/behind you, follow my voice, hurry up / slow down. Installs alongside Human Follow.",
+      "published_at": "2026-11-09T09:58:37Z",
+      "versions": []
+    },
     {
       "package": "com.grin.sanbotrosbridge",
       "label": "Sanbot Ros Bridge",
